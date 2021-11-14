@@ -13,7 +13,6 @@
         console.log("Neighbor: " + valueInInnerArr);
       }
     }
-    return "";
   };
-  console.log(showNeighbors(listOfNeighbors));
+  showNeighbors(listOfNeighbors);
 })();
