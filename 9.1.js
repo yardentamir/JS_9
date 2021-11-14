@@ -10,7 +10,7 @@
   const showNeighbors = (arr) => {
     for (const innerArr of arr) {
       for (const valueInInnerArr of innerArr) {
-        console.log(valueInInnerArr);
+        console.log("Neighbor: " + valueInInnerArr);
       }
     }
     return "";
