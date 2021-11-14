@@ -11,12 +11,7 @@
   };
 
   const firstWordUpperCase = (str, func) => {
-    const wordArr = str.split(" ");
-    const newArr = [];
-    for (const word of wordArr) {
-      newArr.push(word[0].toUpperCase() + word.slice(1));
-    }
-    func(newArr.join(" "), addDot);
+    func(str.charAt(0).toUpperCase() + str.slice(1), addDot);
   };
 
   const addDashes = (str, func) => {

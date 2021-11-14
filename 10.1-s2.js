@@ -9,12 +9,7 @@ const logConsole = (str) => {
 };
 
 const firstWordUpperCase = (str, func) => {
-  const wordArr = str.split(" ");
-  const newArr = [];
-  for (const word of wordArr) {
-    newArr.push(word[0].toUpperCase() + word.slice(1));
-  }
-  func(newArr.join(" "));
+  func(str.charAt(0).toUpperCase() + str.slice(1));
 };
 
 const addDashes = (str) => {
