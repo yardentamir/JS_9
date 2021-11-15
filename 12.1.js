@@ -22,5 +22,17 @@
     return library.filter((book) => book.readingStatus === true);
   };
 
-  console.log(findReadableBooks(library));
+  const titleFirst = (readableBooks) => {
+    const result = [];
+    readableBooks.forEach((obj) => {
+      result.push({
+        title: obj.title,
+        author: obj.author,
+        readingStatus: obj.readingStatus,
+      });
+    });
+    return result;
+  };
+
+  console.log(titleFirst(findReadableBooks(library)));
 })();

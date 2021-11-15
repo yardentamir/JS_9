@@ -64,6 +64,6 @@
   console.log(showFirstAndLast(mixedArr));
   console.log(vowelCount(myStr));
   console.log(capitalize(myStr));
-  console.log(shiftLetters("bdc"));
+  console.log(shiftLetters("12345"));
   console.log(swapCase(myStr2));
 })();
