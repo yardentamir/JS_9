@@ -71,7 +71,44 @@
     return newArr;
   };
 
+  const favoriteFoodsFunc = (data) => {
+    const newArr = [];
+    data.forEach((obj) => {
+      newArr.push(obj.favoriteFoods.meats.concat(obj.favoriteFoods.fish));
+    });
+    const merged = [].concat.apply([], newArr);
+
+    const myObj = {};
+    merged.forEach((char) => {
+      myObj[char] ? myObj[char]++ : (myObj[char] = 1);
+    });
+    return myObj;
+  };
+
+  const favoriteFoodsFunc2 = (data) => {
+    const myObj = {};
+    data.forEach((obj) => {
+      obj.favoriteFoods.meats.forEach((meat) => {
+        if (meat in myObj) {
+          myObj[meat]++;
+        } else {
+          myObj[meat] = 1;
+        }
+      });
+      obj.favoriteFoods.fish.forEach((fish) => {
+        if (fish in myObj) {
+          myObj[fish]++;
+        } else {
+          myObj[fish] = 1;
+        }
+      });
+    });
+    return myObj;
+  };
+
   console.log(getNames(data));
   console.log(before1990(data));
   console.log(before1990solution2(data));
+  console.log(favoriteFoodsFunc(data));
+  console.log(favoriteFoodsFunc2(data));
 })();
