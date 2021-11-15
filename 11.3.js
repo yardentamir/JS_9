@@ -76,7 +76,9 @@
     data.forEach((obj) => {
       newArr.push(obj.favoriteFoods.meats.concat(obj.favoriteFoods.fish));
     });
-    const merged = [].concat.apply([], newArr);
+
+    // const merged = [].concat.apply([], newArr); // another option to flat array
+    const merged = newArr.flat();
 
     const myObj = {};
     merged.forEach((char) => {
