@@ -20,6 +20,8 @@
       if (typeof val === "string") {
         if (val.length > 1) {
           newArr.push(val[0] + val[val.length - 1]);
+        } else {
+          newArr.push(val);
         }
       }
     });
@@ -30,7 +32,9 @@
     const strNotCaseS = str.toLowerCase().split(" ").join("").split("");
     const myObj = {};
     strNotCaseS.forEach((char) => {
-      myObj[char] ? myObj[char]++ : (myObj[char] = 1);
+      if ("aeiou".includes(char)) {
+        myObj[char] ? myObj[char]++ : (myObj[char] = 1);
+      }
     });
     return myObj;
   };
