@@ -39,7 +39,7 @@
 
   function buy(candyStore, id) {
     const priceOfNewCandy = getPrice(candyStore, id);
-    candyStore.cashRegister += priceOfNewCandy;
+    candyStore.cashRegister -= priceOfNewCandy;
     console.log(candyStore.cashRegister);
   }
 
