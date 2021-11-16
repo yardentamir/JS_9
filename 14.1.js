@@ -7,10 +7,7 @@
       if (cur > max) return cur;
     });
 
-  const max2 = () =>
-    nums.reduce((max, cur) => {
-      return Math.max(max, cur);
-    });
+  const max2 = () => nums.reduce((max, cur) => Math.max(max, cur));
 
   console.log(max());
   console.log(max2());
@@ -23,10 +20,6 @@
 
   console.log(even());
 
-  const avg = () =>
-    nums.reduce((total, cur) => {
-      return (total += cur);
-    });
-
+  const avg = () => nums.reduce((total, cur) => (total += cur)) / nums.length;
   console.log(avg());
 })();
