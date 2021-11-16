@@ -1,6 +1,6 @@
 (function () {
   "use strict";
-  const nums = [1, 2, 3, 4, 5, 6];
+  const nums = [7, 2, 3, 4, 5, 6];
 
   const max = () =>
     nums.reduce((max, cur) => {

@@ -43,41 +43,42 @@
   };
 
   const findPerson = (type, id) => {
-    return school[type].filter((person) => person.id === id);
+    return school[type].find((person) => person.id === id);
   };
 
   const assignStudent = (studentId, subject) => {
     const whoIsTheStudent = findPerson("students", studentId);
     // if the student is in the list
-    if (whoIsTheStudent.length !== 0) {
-      // checks for relevant Teacher that teaches this subject and capacity isn't full
-      const relevantTeacher = school.teachers.filter((teacher) => {
-        return (
-          teacher.subjects.includes(subject) &&
-          teacher.students.length < teacher.capacityLeft
-        );
-      });
-      // save to a new array all the students that already assigned
-      const arrOfAssignedStd = school.teachers
-        .map((teacher) => teacher.students)
-        .flat();
-      // takes the first teacher that is available
-      if (relevantTeacher.length !== 0) {
-        if (!arrOfAssignedStd.includes(studentId)) {
-          relevantTeacher[0].students.push(studentId);
-        }
-      } else {
-        console.log("Sorry, no available teachers left”");
-      }
-    } else {
+    if (whoIsTheStudent == undefined) {
       console.log("Sorry, There is no student with this id");
+      return;
+    }
+    // checks for relevant Teacher that teaches this subject and capacity isn't full
+    const relevantTeacher = school.teachers.find((teacher) => {
+      return (
+        teacher.subjects.includes(subject) && teacher.capacityLeft !== 0 //teacher.students.length < teacher.capacityLeft
+      );
+    });
+    if (relevantTeacher == undefined) {
+      console.log("Sorry, no available teachers left");
+      return;
+    }
+    // save to a new array all the students that already assigned
+    const arrOfAssignedStd = school.teachers
+      .map((teacher) => teacher.students)
+      .flat();
+    // takes the first teacher that is available
+
+    if (!arrOfAssignedStd.includes(studentId)) {
+      relevantTeacher.students.push(studentId);
+      relevantTeacher.capacityLeft--;
     }
   };
 
   const assignTeachersSubject = (TeacherId, newSubject) => {
     const whoIsTheTeacher = findPerson("teachers", TeacherId);
-    if (!whoIsTheTeacher[0].subjects.includes(newSubject)) {
-      whoIsTheTeacher[0].subjects.push(newSubject);
+    if (!whoIsTheTeacher.subjects.includes(newSubject)) {
+      whoIsTheTeacher.subjects.push(newSubject);
     }
   };
 
@@ -95,10 +96,13 @@
   assignStudent(11, "physics");
   assignStudent(11, "ethics");
   assignStudent(12, "biology");
+  assignStudent(13, "biology");
+  assignStudent(16, "biology");
+  assignStudent(10, "biology");
   assignTeachersSubject(2, "programming");
   assignTeachersSubject(2, "programming");
-  assignStudent(13, "programming");
   assignNewStudent("yarden", 27);
+  assignNewStudent("tal", 28);
   console.log(school.teachers);
   console.log(school.students);
 })();

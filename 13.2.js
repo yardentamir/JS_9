@@ -49,8 +49,15 @@
       return b.toLowerCase().localeCompare(a.toLowerCase());
     });
   };
-
   console.log(sortAlphabetDesUpper());
+
+  const sortAlphabetDesUpper2 = () => {
+    return foodsWithUpperCase.sort((a, b) =>
+      a.toLowerCase > b.toLowerCase ? -1 : 1
+    );
+  };
+
+  console.log(sortAlphabetDesUpper2());
 
   /* Longest word */
   const words = ["apple", "supercalifragilisticexpialidocious", "hi", "zoo"];
