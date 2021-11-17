@@ -8,7 +8,6 @@ function someFunction(number) {
 }
 var firstResult = someFunction(9);
 var result = firstResult(2);
-
 // ! question
 /*
 Without running the code below, explain in your own words what the result
@@ -21,13 +20,11 @@ firstResult: will return the function otherFunction because we returned the name
 result: will return 5 because firstResult = otherFunction and now we can use it.
 */
 
-var a = 1;
 function b2() {
   a = 10;
-  return;
   function a() {}
 }
-b2();
+console.log(a);
 
 // ! question
 /*
@@ -45,7 +42,7 @@ for (i = 0; i < 3; i++) {
   const log = () => {
     console.log(i);
   };
-  setTimeout(log, 5000);
+  setTimeout(log, 200);
 }
 
 // ! question
