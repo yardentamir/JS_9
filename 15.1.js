@@ -34,9 +34,8 @@ console.log(getSum([1, 2, 3], [5, 66, 23]));
 
 // ! answers
 /* 
-1. Problem in line 11: missing , between the to arrays
-and in line 3: the type of variable.
-2. i used the terminal debugger.
+1. line 11 and in line 3.
+2. i used the terminal debugger and console.log() function
 3. in line 11 you should separate the arguments with , 
 in line 3 the variable should be declared as let because we want to change it's value;
 4. Fix the code and submit it all. - fixed see result above
