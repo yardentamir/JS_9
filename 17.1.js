@@ -19,7 +19,7 @@ of each block of code will be and why.
 firstResult: will return the function otherFunction because we returned the name and weren't calling it
 result: will return 5 because firstResult = otherFunction and now we can use it.
 */
-
+var a = 1;
 function b2() {
   a = 10;
   function a() {}
@@ -34,16 +34,16 @@ of each block of code will be and why.
 
 // * answer
 /* 
-b2() will return undefined because return; returns nothing.
+function a and a = 10 are a local variables and var a is a global variable.
 */
 
-let i;
-for (i = 0; i < 3; i++) {
-  const log = () => {
-    console.log(i);
-  };
-  setTimeout(log, 100);
-}
+// let i;
+// for (i = 0; i < 3; i++) {
+//   const log = () => {
+//     console.log(i);
+//   };
+//   setTimeout(log, 100);
+// }
 
 // ! question
 /*
