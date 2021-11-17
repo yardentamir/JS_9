@@ -17,9 +17,9 @@ If there are any faulty outputs, please write on how we can fix them.
 
 // * answer
 /* 
-in line 2: will be "undefined" because the variable is declared afterwards
-we can fix it by using the variable 'a' after it's declaration.
-in line 3: will be "2" because the function declared is global in it's scope, so first function declaration.
+in line 2: will be "undefined" because the variable is declared afterwards,
+we can fix it by using the variable 'a' after its declaration.
+in line 3: will be "2" because the function declared is global in its scope, so first function declaration.
 */
 
 var fullName = "John Doe";
@@ -45,8 +45,8 @@ If there are any faulty outputs, please write on how we can fix them.
 
 // * answer
 /* 
-obj.prop.getFullName() - will return the full name of the direct father (the prop key);
-test() - will return undefined because we can't save inner object function a variable.
+obj.prop.getFullName() - will return the full name of the direct parent (the prop key);
+test() - will return undefined because we can't save inner object function as a variable.
 */
 function funcB() {
   let a = (b = 0);
@@ -89,8 +89,8 @@ If there are any faulty outputs, please write on how we can fix them.
 
 // * answer
 /* 
-will print "2" two times because the functions declare with te same name function 
-so the first will be equal to the last function. different name function will fix this problem.
+will print "2" two times because the functions declared with the same function name, 
+so the first will be equal to the last function. Different name function should fix this problem.
 */
 
 function funcD1() {
@@ -100,6 +100,8 @@ funcD1();
 console.log(d);
 function funcD2() {
   var e = 1;
+  function()
+  function()
 }
 funcD2();
 console.log(e);
@@ -113,8 +115,8 @@ If there are any faulty outputs, please write on how we can fix them.
 
 // * answer
 /* 
-console.log(d)- will print 1 because we created global variable d and invoke the function before console.log
-console.log(e)- will throw an error because because var global only in this scope and scopes under scopes. 
+console.log(d)- will print 1 because we created a global variable d and invoked the function before console.log
+console.log(e)- will throw an error because var is global only for the functions inside its parent scope(funcD2). 
 we can declare e = 1 to fix this problem.
 */
 
@@ -134,7 +136,7 @@ If there are any faulty outputs, please write on how we can fix them.
 
 // * answer
 /* 
-local scope- will print 1 because we declared var before we called the function and var isa global variable so we can use this var in the under scopes too.
-global scope- will print undefined because console.log before we declare the variable. 
-we can declare it  f = 1 to fix this problem.
+local scope- will print 1 because we declared var before we called the function and var is a global variable so we can use this var in the under scopes too.
+global scope- will print undefined because the console.log is called before the variable is declared. 
+we can declare f = 1 to fix this problem.
 */
